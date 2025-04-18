@@ -25,7 +25,7 @@ class User {
       id: json['id'],
       email: json['email'],
       name: json['name'],
-      profileImageUrl: json['profile_image'],
+      profileImageUrl: json['profileImage'],
       createdAt: DateTime.parse(json['createdAt']),
       updatedAt: DateTime.parse(json['updatedAt']),
       profileImage: null,
@@ -39,9 +39,9 @@ class User {
       'id': id,
       'email': email,
       'name': name,
-      'profile_image': profileImageUrl,
-      'created_at': createdAt.toIso8601String(),
-      'updated_at': updatedAt.toIso8601String(),
+      'profileImage': profileImageUrl,
+      'createdAt': createdAt.toIso8601String(),
+      'updatedAt': updatedAt.toIso8601String(),
     };
   }
 

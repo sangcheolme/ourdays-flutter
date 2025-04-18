@@ -29,7 +29,7 @@ class SpecialDate {
   factory SpecialDate.fromJson(Map<String, dynamic> json) {
     return SpecialDate(
       id: json['id'],
-      coupleId: json['couple_id'],
+      coupleId: json['coupleId'],
       date: DateTime.parse(json['date']),
       title: json['title'],
       description: json['description'],
@@ -37,21 +37,21 @@ class SpecialDate {
         (e) => e.toString().split('.').last == json['type'],
         orElse: () => SpecialDateType.SPECIAL_EVENT,
       ),
-      createdAt: DateTime.parse(json['created_at']),
-      updatedAt: DateTime.parse(json['updated_at']),
+      createdAt: DateTime.parse(json['createdAt']),
+      updatedAt: DateTime.parse(json['updatedAt']),
     );
   }
 
   Map<String, dynamic> toJson() {
     return {
       'id': id,
-      'couple_id': coupleId,
+      'coupleId': coupleId,
       'date': date.toIso8601String(),
       'title': title,
       'description': description,
       'type': type.toString().split('.').last,
-      'created_at': createdAt.toIso8601String(),
-      'updated_at': updatedAt.toIso8601String(),
+      'createdAt': createdAt.toIso8601String(),
+      'updatedAt': updatedAt.toIso8601String(),
     };
   }
 

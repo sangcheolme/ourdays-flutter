@@ -42,12 +42,12 @@ class Couple {
   Map<String, dynamic> toJson() {
     return {
       'id': id,
-      'user1_id': user1Id,
-      'user2_id': user2Id,
-      'anniversary_date': anniversaryDate.toIso8601String(),
+      'user1Id': user1Id,
+      'user2Id': user2Id,
+      'anniversaryDate': anniversaryDate.toIso8601String(),
       'status': status.toString().split('.').last,
-      'created_at': createdAt.toIso8601String(),
-      'updated_at': updatedAt.toIso8601String(),
+      'createdAt': createdAt.toIso8601String(),
+      'updatedAt': updatedAt.toIso8601String(),
     };
   }
 

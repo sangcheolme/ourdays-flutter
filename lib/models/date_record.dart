@@ -31,7 +31,7 @@ class DateRecord {
   factory DateRecord.fromJson(Map<String, dynamic> json) {
     return DateRecord(
       id: json['id'],
-      coupleId: json['couple_id'],
+      coupleId: json['coupleId'],
       date: DateTime.parse(json['date']),
       title: json['title'],
       memo: json['memo'],
@@ -39,23 +39,23 @@ class DateRecord {
         (e) => e.toString().split('.').last == json['emotion'],
         orElse: () => Emotion.HAPPY,
       ),
-      createdBy: json['created_by'],
-      createdAt: DateTime.parse(json['created_at']),
-      updatedAt: DateTime.parse(json['updated_at']),
+      createdBy: json['createdBy'],
+      createdAt: DateTime.parse(json['createdAt']),
+      updatedAt: DateTime.parse(json['updatedAt']),
     );
   }
 
   Map<String, dynamic> toJson() {
     return {
       'id': id,
-      'couple_id': coupleId,
+      'coupleId': coupleId,
       'date': date.toIso8601String(),
       'title': title,
       'memo': memo,
       'emotion': emotion.toString().split('.').last,
-      'created_by': createdBy,
-      'created_at': createdAt.toIso8601String(),
-      'updated_at': updatedAt.toIso8601String(),
+      'createdBy': createdBy,
+      'createdAt': createdAt.toIso8601String(),
+      'updatedAt': updatedAt.toIso8601String(),
     };
   }
 

@@ -35,7 +35,7 @@ class Place {
   factory Place.fromJson(Map<String, dynamic> json) {
     return Place(
       id: json['id'],
-      dateRecordId: json['date_record_id'],
+      dateRecordId: json['dateRecordId'],
       name: json['name'],
       address: json['address'],
       latitude: json['latitude'],
@@ -46,15 +46,15 @@ class Place {
       ),
       rating: json['rating'] ?? 0,
       review: json['review'],
-      createdAt: DateTime.parse(json['created_at']),
-      updatedAt: DateTime.parse(json['updated_at']),
+      createdAt: DateTime.parse(json['createdAt']),
+      updatedAt: DateTime.parse(json['updatedAt']),
     );
   }
 
   Map<String, dynamic> toJson() {
     return {
       'id': id,
-      'date_record_id': dateRecordId,
+      'dateRecordId': dateRecordId,
       'name': name,
       'address': address,
       'latitude': latitude,
@@ -62,8 +62,8 @@ class Place {
       'category': category.toString().split('.').last,
       'rating': rating,
       'review': review,
-      'created_at': createdAt.toIso8601String(),
-      'updated_at': updatedAt.toIso8601String(),
+      'createdAt': createdAt.toIso8601String(),
+      'updatedAt': updatedAt.toIso8601String(),
     };
   }
 

@@ -23,22 +23,22 @@ class Comment {
   factory Comment.fromJson(Map<String, dynamic> json) {
     return Comment(
       id: json['id'],
-      dateRecordId: json['date_record_id'],
-      userId: json['user_id'],
+      dateRecordId: json['dateRecordId'],
+      userId: json['userId'],
       content: json['content'],
-      createdAt: DateTime.parse(json['created_at']),
-      updatedAt: DateTime.parse(json['updated_at']),
+      createdAt: DateTime.parse(json['createdAt']),
+      updatedAt: DateTime.parse(json['updatedAt']),
     );
   }
 
   Map<String, dynamic> toJson() {
     return {
       'id': id,
-      'date_record_id': dateRecordId,
-      'user_id': userId,
+      'dateRecordId': dateRecordId,
+      'userId': userId,
       'content': content,
-      'created_at': createdAt.toIso8601String(),
-      'updated_at': updatedAt.toIso8601String(),
+      'createdAt': createdAt.toIso8601String(),
+      'updatedAt': updatedAt.toIso8601String(),
     };
   }
 

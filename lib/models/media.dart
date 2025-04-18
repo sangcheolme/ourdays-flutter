@@ -30,9 +30,9 @@ class Media {
   factory Media.fromJson(Map<String, dynamic> json) {
     return Media(
       id: json['id'],
-      referenceId: json['reference_id'],
+      referenceId: json['referenceId'],
       referenceType: ReferenceType.values.firstWhere(
-        (e) => e.toString().split('.').last == json['reference_type'],
+        (e) => e.toString().split('.').last == json['referenceType'],
         orElse: () => ReferenceType.DATE_RECORD,
       ),
       type: MediaType.values.firstWhere(
@@ -40,22 +40,22 @@ class Media {
         orElse: () => MediaType.IMAGE,
       ),
       url: json['url'],
-      thumbnailUrl: json['thumbnail_url'],
-      createdAt: DateTime.parse(json['created_at']),
-      updatedAt: DateTime.parse(json['updated_at']),
+      thumbnailUrl: json['thumbnailUrl'],
+      createdAt: DateTime.parse(json['createdAt']),
+      updatedAt: DateTime.parse(json['updatedAt']),
     );
   }
 
   Map<String, dynamic> toJson() {
     return {
       'id': id,
-      'reference_id': referenceId,
-      'reference_type': referenceType.toString().split('.').last,
+      'referenceId': referenceId,
+      'referenceType': referenceType.toString().split('.').last,
       'type': type.toString().split('.').last,
       'url': url,
-      'thumbnail_url': thumbnailUrl,
-      'created_at': createdAt.toIso8601String(),
-      'updated_at': updatedAt.toIso8601String(),
+      'thumbnailUrl': thumbnailUrl,
+      'createdAt': createdAt.toIso8601String(),
+      'updatedAt': updatedAt.toIso8601String(),
     };
   }
 }
