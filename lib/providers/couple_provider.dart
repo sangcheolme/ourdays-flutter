@@ -58,7 +58,7 @@ class CoupleProvider with ChangeNotifier {
     
     try {
       final response = await _coupleService.createInvite(anniversaryDate);
-      _inviteCode = response.inviteCode;
+      _inviteCode = response['inviteCode'];
       _error = null;
       return true;
     } catch (e) {
@@ -75,8 +75,7 @@ class CoupleProvider with ChangeNotifier {
     _setLoading(true);
 
     try {
-      final couple = await _coupleService.acceptInvite(
-          inviteCode, anniversaryDate);
+      final couple = await _coupleService.acceptInvite(inviteCode, anniversaryDate);
       _couple = couple;
       _error = null;
       return true;

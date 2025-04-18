@@ -27,15 +27,15 @@ class Couple {
   factory Couple.fromJson(Map<String, dynamic> json) {
     return Couple(
       id: json['id'],
-      user1Id: json['user1_id'],
-      user2Id: json['user2_id'],
-      anniversaryDate: DateTime.parse(json['anniversary_date']),
+      user1Id: json['user1Id'],
+      user2Id: json['user2Id'],
+      anniversaryDate: DateTime.parse(json['anniversaryDate']),
       status: CoupleStatus.values.firstWhere(
         (e) => e.toString().split('.').last == json['status'],
         orElse: () => CoupleStatus.PENDING,
       ),
-      createdAt: DateTime.parse(json['created_at']),
-      updatedAt: DateTime.parse(json['updated_at']),
+      createdAt: DateTime.parse(json['createdAt']),
+      updatedAt: DateTime.parse(json['updatedAt']),
     );
   }
 

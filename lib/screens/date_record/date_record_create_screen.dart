@@ -736,9 +736,7 @@ class _DateRecordCreateScreenState extends State<DateRecordCreateScreen> {
         return Icons.sentiment_satisfied_alt;
       case Emotion.LOVED:
         return Icons.favorite;
-      default:
-        return Icons.sentiment_neutral;
-    }
+      }
   }
 
   Color _getEmotionColor(Emotion emotion) {
@@ -757,9 +755,7 @@ class _DateRecordCreateScreenState extends State<DateRecordCreateScreen> {
         return Colors.purple;
       case Emotion.LOVED:
         return Colors.pink;
-      default:
-        return Colors.grey;
-    }
+      }
   }
 
   IconData _getCategoryIcon(PlaceCategory category) {
@@ -782,9 +778,7 @@ class _DateRecordCreateScreenState extends State<DateRecordCreateScreen> {
         return Icons.flight;
       case PlaceCategory.OTHER:
         return Icons.more_horiz;
-      default:
-        return Icons.place;
-    }
+      }
   }
 
   Color _getCategoryColor(PlaceCategory category) {

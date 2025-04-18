@@ -56,10 +56,7 @@ class AuthProvider with ChangeNotifier {
   // Login
   Future<bool> login(String email, String password) async {
     try {
-      /*final response = await _authService.login(email, password);*/
-
-      var user = User(id: '1', email: 'tkdcjf38@naver.com', name: '박상철', createdAt: DateTime.timestamp(), updatedAt: DateTime.timestamp(), profileImage: '123', profileImageUrl: '123');
-      AuthResponse response = AuthResponse(token: 'xxx', user: user);
+      final response = await _authService.login(email, password);
       
       // Save token
       await _secureStorage.write(key: 'auth_token', value: response.token);
@@ -80,10 +77,10 @@ class AuthProvider with ChangeNotifier {
   // Register
   Future<bool> register(String name, String email, String password) async {
     try {
-      final response = await _authService.register(name, email, password);
+      final response = await _authService.register(email, password, name);
       
       // Save token
-      await _secureStorage.write(key: 'auth_token', value: response.token);
+      await _secureStorage.write(key: 'auth_token', value: 'xxx');
       
       _token = response.token;
       _currentUser = response.user;

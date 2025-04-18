@@ -17,8 +17,8 @@ class AuthService {
         'name': name,
       });
 
-      final authToken = response.data['auth_token'];
-      final refreshToken = response.data['refresh_token'];
+      final authToken = response.data['accessToken'];
+      final refreshToken = response.data['refreshToken'];
 
       // Save auth tokens
       await _apiClient.saveTokens(
@@ -44,8 +44,8 @@ class AuthService {
         'password': password,
       });
 
-      final authToken = response.data['auth_token'];
-      final refreshToken = response.data['refresh_token'];
+      final authToken = response.data['accessToken'];
+      final refreshToken = response.data['refreshToken'];
 
       // Save auth tokens
       await _apiClient.saveTokens(

@@ -2,7 +2,7 @@ import 'package:dio/dio.dart';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 
 class ApiClient {
-  static const String baseUrl = 'https://api.ourdays.app/api/v1';
+  static const String baseUrl = 'http://localhost:8080';
   static const String authTokenKey = 'auth_token';
   static const String refreshTokenKey = 'refresh_token';
   

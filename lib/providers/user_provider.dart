@@ -51,7 +51,7 @@ class UserProvider with ChangeNotifier {
     _setLoading(true);
     
     try {
-      final user = await _userService.updateUser(updatedUser);
+      final user = await _userService.updateProfile(updatedUser.name);
       _user = user;
       _error = null;
       return true;

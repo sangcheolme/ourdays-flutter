@@ -20,8 +20,8 @@ class CoupleService {
   Future<Couple> acceptInvite(String inviteCode, DateTime anniversaryDate) async {
     try {
       final response = await _apiClient.post('/couples/accept', data: {
-        'invite_code': inviteCode,
-        'anniversary_date': anniversaryDate.toIso8601String(),
+        'inviteCode': inviteCode,
+        'anniversaryDate': anniversaryDate.toIso8601String(),
       });
       return Couple.fromJson(response.data);
     } catch (e) {
@@ -80,12 +80,12 @@ class CoupleService {
     }
   }
 
-  Future<Couple> createInvite(DateTime anniversaryDate) async {
+  Future<Map<String, dynamic>> createInvite(DateTime anniversaryDate) async {
     try {
       final response = await _apiClient.post('/couples/invite', data: {
         'anniversary_date': anniversaryDate.toIso8601String(),
       });
-      return Couple.fromJson(response.data);
+      return response.data;
     } catch (e) {
       rethrow;
     }
